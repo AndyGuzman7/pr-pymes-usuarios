@@ -22,6 +22,8 @@ public class Business {
 	private String type;
 	@Column(length=10, nullable = false)
 	private String phone_number;
+	@Column(length=150, nullable = false)
+	private String direction;
 	
 	
 	public Long getId() {
@@ -53,7 +55,12 @@ public class Business {
 	}
 	public void setPhone_number(String phone_number) {
 		this.phone_number = phone_number;
-	}	
-	
+	}
+	public String getDirection() {
+		return direction;
+	}
+	public void setDirection(String direction) {
+		this.direction = direction;
+	}		
 	
 }

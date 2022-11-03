@@ -73,5 +73,4 @@ public class Person {
 		this.rol_id = rol_id;
 	}
 	
-	
 }
