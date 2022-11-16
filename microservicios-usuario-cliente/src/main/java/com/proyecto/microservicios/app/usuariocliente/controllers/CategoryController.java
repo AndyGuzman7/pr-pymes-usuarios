@@ -20,12 +20,12 @@ public class CategoryController {
 	@Autowired
 	private CategoryService service;
 	
-	@GetMapping	
+	@GetMapping("/category")	
 	public ResponseEntity<?> listar() {
 		return ResponseEntity.ok().body(service.findAll());
 	}
 	
-	@GetMapping("/{id}")
+	@GetMapping("/category/{id}")
 	public ResponseEntity<?> ver(@PathVariable Long id) {
 		Optional<Category> o = service.findById(id);
 		if(o.isEmpty()) {
@@ -34,13 +34,13 @@ public class CategoryController {
 		return ResponseEntity.ok(o.get());
 	}
 	
-	@PostMapping
+	@PostMapping("/category")
 	public ResponseEntity<?> crear(@RequestBody Category category) {
 		Category categoryDb = service.save(category);
 		return ResponseEntity.status(HttpStatus.CREATED).body(categoryDb);
 	}
 	
-	@PutMapping("/{id}")
+	@PutMapping("/category/{id}")
 	public ResponseEntity<?> editar(@RequestBody Category category, @PathVariable Long id) {
 		Optional<Category> o = service.findById(id);
 		if(o.isEmpty()) {

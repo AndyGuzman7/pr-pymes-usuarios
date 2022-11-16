@@ -30,12 +30,12 @@ public class PersonController {
 	@Autowired
 	private PersonService service;
 	
-	@GetMapping	
+	@GetMapping("/person")	
 	public ResponseEntity<?> listar() {
 		return ResponseEntity.ok().body(service.findAll());
 	}
 	
-	@GetMapping("/{id}")
+	@GetMapping("/person/{id}")
 	public ResponseEntity<?> ver(@PathVariable Long id) {
 		Optional<Person> o = service.findById(id);
 		if(o.isEmpty()) {
@@ -46,13 +46,13 @@ public class PersonController {
 	
 	
 	
-	@PostMapping
+	@PostMapping("/person")
 	public ResponseEntity<?> crear(@RequestBody Person person) {
 		Person personDb = service.save(person);
 		return ResponseEntity.status(HttpStatus.CREATED).body(personDb);
 	}
 	
-	@PutMapping("/{id}")
+	@PutMapping("/person/{id}")
 	public ResponseEntity<?> editar(@RequestBody Person person, @PathVariable Long id) {
 		Optional<Person> o = service.findById(id);
 		if(o.isEmpty()) {
@@ -69,7 +69,7 @@ public class PersonController {
 		return ResponseEntity.status(HttpStatus.CREATED).body(service.save(personDb));
 	}
 	
-	@PutMapping("/{id}")
+	@PutMapping("/recoverPassword/{id}")
 	public ResponseEntity<?> recuperarContrasenia(@RequestBody Person person, @PathVariable Long id) {
 		Optional<Person> o = service.findById(id);
 		if(o.isEmpty()) {
@@ -91,7 +91,8 @@ public class PersonController {
 		
 		return ResponseEntity.status(HttpStatus.CREATED).body(service.save(personDb));
 	}
-	@DeleteMapping("/{id}")
+	
+	@DeleteMapping("/person/{id}")
 	public ResponseEntity<?> eliminar(@PathVariable Long id) {
 		service.deleteById(id);
 		return ResponseEntity.noContent().build();

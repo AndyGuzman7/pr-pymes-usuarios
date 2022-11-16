@@ -20,12 +20,12 @@ public class CategoryBusinessController {
 	@Autowired
 	private CategoryBusinessService service;
 	
-	@GetMapping	
+	@GetMapping("/categoryBusiness")	
 	public ResponseEntity<?> listar() {
 		return ResponseEntity.ok().body(service.findAll());
 	}
 	
-	@GetMapping("/{id}")
+	@GetMapping("/categoryBusiness/{id}")
 	public ResponseEntity<?> ver(@PathVariable Long id) {
 		Optional<CategoryBusiness> o = service.findById(id);
 		if(o.isEmpty()) {
@@ -34,13 +34,13 @@ public class CategoryBusinessController {
 		return ResponseEntity.ok(o.get());
 	}
 	
-	@PostMapping
+	@PostMapping("/categoryBusiness")
 	public ResponseEntity<?> crear(@RequestBody CategoryBusiness categoryBusiness) {
 		CategoryBusiness categoryBusinessDb = service.save(categoryBusiness);
 		return ResponseEntity.status(HttpStatus.CREATED).body(categoryBusinessDb);
 	}
 	
-	@PutMapping("/{id}")
+	@PutMapping("/categoryBusiness/{id}")
 	public ResponseEntity<?> editar(@RequestBody CategoryBusiness categoryBusiness, @PathVariable Long id) {
 		Optional<CategoryBusiness> o = service.findById(id);
 		if(o.isEmpty()) {
