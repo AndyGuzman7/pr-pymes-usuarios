@@ -4620,3 +4620,4 @@ java.lang.NullPointerException: Cannot invoke "org.eclipse.core.runtime.IPath.to
 2022-11-21 22:18:05,870 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2022-11-21 22:18:05,879 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2022-11-21 22:18:05,879 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-21 22:18:05,880 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Lucas Oropeza\Documents\GitHub\pr-pymes-usuarios\microservicios-usuario-cliente\src\test\resources
