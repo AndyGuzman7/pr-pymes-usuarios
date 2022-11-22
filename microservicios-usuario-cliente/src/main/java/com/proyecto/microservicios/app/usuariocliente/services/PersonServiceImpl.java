@@ -40,6 +40,18 @@ public class PersonServiceImpl implements PersonService {
 	public void deleteById(Long id) {
 		// TODO Auto-generated method stub
 		repository.deleteById(id);
+	}
+
+	@Override
+	public Optional<Person> findByEmail(String email) {
+		// TODO Auto-generated method stub
+		return repository.findByEmail(email);
+	}
+
+	@Override
+	public Optional<Person> getByTokenPassword(String tokenPassword) {
+		// TODO Auto-generated method stub
+		return repository.findByTokenPassword(tokenPassword);
 	}	
 
 }

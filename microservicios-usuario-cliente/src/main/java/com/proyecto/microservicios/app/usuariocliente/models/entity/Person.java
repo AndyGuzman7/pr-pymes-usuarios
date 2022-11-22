@@ -20,6 +20,7 @@ public class Person {
 	private String last_name;
 	private String email;
 	private String password;
+	private String tokenPassword;
 	
 	@Column(nullable = false)
 	private Long rol_id;
@@ -63,6 +64,14 @@ public class Person {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+	public String getTokenPassword() {
+		return tokenPassword;
+	}
+
+	public void setTokenPassword(String tokenPassword) {
+		this.tokenPassword = tokenPassword;
 	}
 
 	public Long getRol_id() {

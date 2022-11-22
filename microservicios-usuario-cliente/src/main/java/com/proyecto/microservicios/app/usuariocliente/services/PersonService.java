@@ -13,4 +13,8 @@ public interface PersonService {
 	public Person save(Person person);
 	
 	public void deleteById(Long id);
+
+	public Optional<Person> findByEmail(String email);
+
+	public Optional<Person> getByTokenPassword(String tokenPassword);
 }
