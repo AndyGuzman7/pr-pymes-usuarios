@@ -54,4 +54,9 @@ public class PersonServiceImpl implements PersonService {
 		return repository.findByTokenPassword(tokenPassword);
 	}	
 
+	@Override
+	@Transactional
+	public Optional<Person> login(String email, String pass) {
+		return repository.login(email, pass);
+	}
 }

@@ -15,16 +15,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 import com.proyecto.microservicios.app.usuariocliente.models.entity.Person;
 import com.proyecto.microservicios.app.usuariocliente.services.EmailService;
 import com.proyecto.microservicios.app.usuariocliente.services.PersonService;
 
-
-
-
+@EnableEurekaClient
 @RestController	
 public class PersonController {
 	
@@ -48,7 +47,11 @@ public class PersonController {
 		return ResponseEntity.ok(o.get());
 	}
 	
-	
+	@GetMapping("/login")
+	public ResponseEntity<?> ver(@RequestParam String email, String pass) {
+		Optional<Person> o = service.login(email, pass);
+		return ResponseEntity.ok(o.get());
+	}
 	
 	@PostMapping("/person")
 	public ResponseEntity<?> crear(@RequestBody Person person) {

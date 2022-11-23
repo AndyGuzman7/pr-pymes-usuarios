@@ -42,4 +42,10 @@ public class BusinessServiceImpl implements BusinessService {
 		repository.deleteById(id);
 	}
 
+	@Override
+	@Transactional
+	public long getTheNextId() {
+		long nextId = repository.getTheNextId();
+		return nextId;
+	}	
 }

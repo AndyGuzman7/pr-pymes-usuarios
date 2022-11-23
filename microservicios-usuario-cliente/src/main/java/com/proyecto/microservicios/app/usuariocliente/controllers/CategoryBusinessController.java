@@ -1,5 +1,6 @@
 package com.proyecto.microservicios.app.usuariocliente.controllers;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,10 +12,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 import com.proyecto.microservicios.app.usuariocliente.models.entity.CategoryBusiness;
 import com.proyecto.microservicios.app.usuariocliente.services.CategoryBusinessService;
 
+@EnableEurekaClient
 @RestController
 public class CategoryBusinessController {
 	@Autowired
@@ -35,9 +38,9 @@ public class CategoryBusinessController {
 	}
 	
 	@PostMapping("/categoryBusiness")
-	public ResponseEntity<?> crear(@RequestBody CategoryBusiness categoryBusiness) {
-		CategoryBusiness categoryBusinessDb = service.save(categoryBusiness);
-		return ResponseEntity.status(HttpStatus.CREATED).body(categoryBusinessDb);
+	public ResponseEntity<?> crear(@RequestBody List<CategoryBusiness> categoryBusiness) {
+		service.saveAll(categoryBusiness);
+		return ResponseEntity.status(HttpStatus.CREATED).body(categoryBusiness);
 	}
 	
 	@PutMapping("/categoryBusiness/{id}")

@@ -13,4 +13,6 @@ public interface BusinessService {
 	public Business save(Business business);
 	
 	public void deleteById(Long id);
+	
+	long getTheNextId();
 }

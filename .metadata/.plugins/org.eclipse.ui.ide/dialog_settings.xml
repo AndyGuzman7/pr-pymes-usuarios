@@ -58,6 +58,8 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="D:\Universidad\6to Semestre\Proyecto de Sistemas 3\Pymes-gateway\PR_PYMES_VENTAS"/>
+			<item value="D:\Universidad\6to Semestre\Proyecto de Sistemas 3\PyMes3\pr-pymes-usuarios"/>
 			<item value="C:\Users\Lucas Oropeza\Documents\GitHub\tutorial_jwt_BACK"/>
 			<item value="C:\Users\Lucas Oropeza\Documents\GitHub\pr-pymes-usuarios"/>
 		</list>

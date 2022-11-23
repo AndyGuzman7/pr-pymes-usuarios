@@ -1,5 +1,6 @@
 package com.proyecto.microservicios.app.usuariocliente.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,4 +43,10 @@ public class CategoryBusinessServiceImpl implements CategoryBusinessService {
 		repository.deleteById(id);
 	}
 
+	@Override
+	@Transactional
+	public List<CategoryBusiness> saveAll(List<CategoryBusiness> entities) {
+		repository.saveAll(entities);
+		return entities;
+	}
 }

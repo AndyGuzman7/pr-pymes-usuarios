@@ -11,10 +11,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 import com.proyecto.microservicios.app.usuariocliente.models.entity.Category;
 import com.proyecto.microservicios.app.usuariocliente.services.CategoryService;
 
+@EnableEurekaClient
 @RestController
 public class CategoryController {
 	@Autowired
